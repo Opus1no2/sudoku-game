@@ -1,0 +1,150 @@
+@import './colors.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Quicksand', sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  color: white;
+  background: #4a4a4a;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  font-size: 100%;
+  font-family: inherit;
+  border: 0;
+  padding: 0;
+}
+
+header {
+  h1 { margin: 0 }
+  color: white;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.header-highlight {
+  height: 20px;
+  background: #3b7dc5;
+}
+
+.choice {
+  color: #2f2f2f;
+  border-right: solid 1px black;
+  background: white;
+  flex: 1;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.mobile-choices {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90vw;
+  margin-top: 10px;
+}
+
+.game-board  {
+  height: 90vw;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  color: white;
+}
+
+.loading {
+  height: 90vw;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  flex: 1;
+}
+
+.section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border: solid 1px #545490;
+}
+
+.cell {
+  border: solid 1px #0000ff38;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.touched {
+  background: white;
+}
+
+.light-touch {
+  background: #64ce6966;
+}
+
+.edited { color: green }
+
+.tiny { width: 1px; height: 1px; }
+
+.success-background {
+  background: #40c140;
+}
+
+.success, .failure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+
+  button {
+    background: #3b7dc5;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  .sub-msg {
+    margin-bottom: 20px;
+  }
+}
+
+.failure {
+  h2 { color: #ffca00 }
+
+  button {
+    background: #4aab4a;
+    color: white;
+    width: 100%;
+    margin-top: 15px;
+  }
+}
+
+.hide { display: none }

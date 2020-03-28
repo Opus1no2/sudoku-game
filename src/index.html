@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300&display=swap" rel="stylesheet">
+
+    <title>Sudoku Game</title>
+  </head>
+  <body>
+    <div class="header-highlight"></div>
+    <header>
+      <h1>Sudoku <small>game</small></h1>
+    </header>
+    <main>
+    <div class="loading">
+      <h4>Generating Game Board</h4>
+      We thank you for your patience...
+    </div>
+    <div data-el="failure" class="hide failure">
+      <h2>RUH ROH</h2>
+      <div class="sub-msg">Somethings not right!</div>
+      <button data-el="fix-it">Fix It?</button>
+      <button data-el="restart">Generate New Grid?</button>
+    </div>
+    <div data-el="success" class="hide success">
+      <h2>CONGRATULATIONS!</h2>
+      <div class="sub-msg">You win! You get a cake!</div>
+      <button data-el="restart">Play Again?</button>
+    </div>
+    <div data-el="game-board" class="hide game-board">
+      <div class="row">
+        <div data-el="section" class="section">
+          <div class="row">
+            <div data-val="" data-sec="1" data-col="1" data-row="1" class="cell"></div>
+            <div data-val="" data-sec="1" data-col="2" data-row="1" class="cell"></div>
+            <div data-val="" data-sec="1" data-col="3" data-row="1" class="cell"></div>
+          </div>
+          <div class="row">
+            <div data-val="" data-sec="1" data-col="1" data-row="2" class="cell"></div>
+            <div data-val="" data-sec="1" data-col="2" data-row="2" class="cell"></div>
+            <div data-val="" data-sec="1" data-col="3" data-row="2" class="cell"></div>
+          </div>
+          <div class="row">
+            <div data-val="" data-sec="1" data-col="1" data-row="3" class="cell"></div>
+            <div data-val="" data-sec="1" data-col="2" data-row="3" class="cell"></div>
+            <div data-val="" data-sec="1" data-col="3" data-row="3" class="cell"></div>
+          </div>
+        </div>
+        <div data-el="section" class="section">
+          <div class="row">
+            <div data-val="" data-sec="2" data-col="4" data-row="1" class="cell"></div>
+            <div data-val="" data-sec="2" data-col="5" data-row="1" class="cell"></div>
+            <div data-val="" data-sec="2" data-col="6" data-row="1" class="cell"></div>
+          </div>
+          <div class="row">
+            <div data-val="" data-sec="2" data-col="4" data-row="2" class="cell"></div>
+            <div data-val="" data-sec="2" data-col="5" data-row="2" class="cell"></div>
+            <div data-val="" data-sec="2" data-col="6" data-row="2" class="cell"></div>
+          </div>
+          <div class="row">
+            <div data-val="" data-sec="2" data-col="4" data-row="3" class="cell"></div>
+            <div data-val="" data-sec="2" data-col="5" data-row="3" class="cell"></div>
+            <div data-val="" data-sec="2" data-col="6" data-row="3" class="cell"></div>
+          </div>
+        </div>
+        <div data-el="section" class="section">
+          <div class="row">
+            <div data-val="" data-sec="3" data-col="7" data-row="1" class="cell"></div>
+            <div data-val="" data-sec="3" data-col="8" data-row="1" class="cell"></div>
+            <div data-val="" data-sec="3" data-col="9" data-row="1" class="cell"></div>
+          </div>
+          <div class="row">
+            <div data-val="" data-sec="3" data-col="7" data-row="2" class="cell"></div>
+            <div data-val="" data-sec="3" data-col="8" data-row="2" class="cell"></div>
+            <div data-val="" data-sec="3" data-col="9" data-row="2" class="cell"></div>
+          </div>
+          <div class="row">
+            <div data-val="" data-sec="3" data-col="7" data-row="3" class="cell"></div>
+            <div data-val="" data-sec="3" data-col="8" data-row="3" class="cell"></div>
+            <div data-val="" data-sec="3" data-col="9" data-row="3" class="cell"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div data-el="section" class="section">
+          <div class="row">
+            <div data-val="" data-sec="4" data-col="1" data-row="4" class="cell"></div>
+            <div data-val="" data-sec="4" data-col="2" data-row="4" class="cell"></div>
+            <div data-val="" data-sec="4" data-col="3" data-row="4" class="cell"></div>
+          </div>
+          <div class="row">
+            <div data-val="" data-sec="4" data-col="1" data-row="5" class="cell"></div>
+            <div data-val="" data-sec="4" data-col="2" data-row="5" class="cell"></div>
+            <div data-val="" data-sec="4" data-col="3" data-row="5" class="cell"></div>
+          </div>
+          <div class="row">
+            <div data-val="" data-sec="4" data-col="1" data-row="6" class="cell"></div>
+            <div data-val="" data-sec="4" data-col="2" data-row="6" class="cell"></div>
+            <div data-val="" data-sec="4" data-col="3" data-row="6" class="cell"></div>
+          </div>
+        </div>
+        <div data-el="section" class="section">
+          <div class="row">
+            <div data-val="" data-sec="5" data-col="4" data-row="4" class="cell"></div>
+            <div data-val="" data-sec="5" data-col="5" data-row="4" class="cell"></div>
+            <div data-val="" data-sec="5" data-col="6" data-row="4" class="cell"></div>
+          </div>
+          <div class="row">
+            <div data-val="" data-sec="5" data-col="4" data-row="5" class="cell"></div>
+            <div data-val="" data-sec="5" data-col="5" data-row="5" class="cell"></div>
+            <div data-val="" data-sec="5" data-col="6" data-row="5" class="cell"></div>
+          </div>
+          <div class="row">
+            <div data-val="" data-sec="5" data-col="4" data-row="6" class="cell"></div>
+            <div data-val="" data-sec="5" data-col="5" data-row="6" class="cell"></div>
+            <div data-val="" data-sec="5" data-col="6" data-row="6" class="cell"></div>
+          </div>
+        </div>
+        <div data-el="section" class="section">
+          <div class="row">
+            <div data-val="" data-sec="6" data-col="7" data-row="4" class="cell"></div>
+            <div data-val="" data-sec="6" data-col="8" data-row="4" class="cell"></div>
+            <div data-val="" data-sec="6" data-col="9" data-row="4" class="cell"></div>
+          </div>
+          <div class="row">
+            <div data-val="" data-sec="6" data-col="7" data-row="5" class="cell"></div>
+            <div data-val="" data-sec="6" data-col="8" data-row="5" class="cell"></div>
+            <div data-val="" data-sec="6" data-col="9" data-row="5" class="cell"></div>
+          </div>
+          <div class="row">
+            <div data-val="" data-sec="6" data-col="7" data-row="6" class="cell"></div>
+            <div data-val="" data-sec="6" data-col="8" data-row="6" class="cell"></div>
+            <div data-val="" data-sec="6" data-col="9" data-row="6" class="cell"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div data-el="section" class="section">
+          <div class="row">
+            <div data-val="" data-sec="7" data-col="1" data-row="7" class="cell"></div>
+            <div data-val="" data-sec="7" data-col="2" data-row="7" class="cell"></div>
+            <div data-val="" data-sec="7" data-col="3" data-row="7" class="cell"></div>
+          </div>
+          <div class="row">
+            <div data-val="" data-sec="7" data-col="1" data-row="8" class="cell"></div>
+            <div data-val="" data-sec="7" data-col="2" data-row="8" class="cell"></div>
+            <div data-val="" data-sec="7" data-col="3" data-row="8" class="cell"></div>
+          </div>
+          <div class="row">
+            <div data-val="" data-sec="7" data-col="1" data-row="9" class="cell"></div>
+            <div data-val="" data-sec="7" data-col="2" data-row="9" class="cell"></div>
+            <div data-val="" data-sec="7" data-col="3" data-row="9" class="cell"></div>
+          </div>
+        </div>
+        <div data-el="section" class="section">
+          <div class="row">
+            <div data-val="" data-sec="8" data-col="4" data-row="7" class="cell"></div>
+            <div data-val="" data-sec="8" data-col="5" data-row="7" class="cell"></div>
+            <div data-val="" data-sec="8" data-col="6" data-row="7" class="cell"></div>
+          </div>
+          <div class="row">
+            <div data-val="" data-sec="8" data-col="4" data-row="8" class="cell"></div>
+            <div data-val="" data-sec="8" data-col="5" data-row="8" class="cell"></div>
+            <div data-val="" data-sec="8" data-col="6" data-row="8" class="cell"></div>
+          </div>
+          <div class="row">
+            <div data-val="" data-sec="8" data-col="4" data-row="9" class="cell"></div>
+            <div data-val="" data-sec="8" data-col="5" data-row="9" class="cell"></div>
+            <div data-val="" data-sec="8" data-col="6" data-row="9" class="cell"></div>
+          </div>
+        </div>
+        <div data-el="section" class="section">
+          <div class="row">
+            <div data-val="" data-sec="9" data-col="7" data-row="7" class="cell"></div>
+            <div data-val="" data-sec="9" data-col="8" data-row="7" class="cell"></div>
+            <div data-val="" data-sec="9" data-col="9" data-row="7" class="cell"></div>
+          </div>
+          <div class="row">
+            <div data-val="" data-sec="9" data-col="7" data-row="8" class="cell"></div>
+            <div data-val="" data-sec="9" data-col="8" data-row="8" class="cell"></div>
+            <div data-val="" data-sec="9" data-col="9" data-row="8" class="cell"></div>
+          </div>
+          <div class="row">
+            <div data-val="" data-sec="9" data-col="7" data-row="9" class="cell"></div>
+            <div data-val="" data-sec="9" data-col="8" data-row="9" class="cell"></div>
+            <div data-val="" data-sec="9" data-col="9" data-row="9" class="cell"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hide mobile-choices">
+      <button value="1" class="choice">1</button>
+      <button value="2" class="choice">2</button>
+      <button value="3" class="choice">3</button>
+      <button value="4" class="choice">4</button>
+      <button value="5" class="choice">5</button>
+      <button value="6" class="choice">6</button>
+      <button value="7" class="choice">7</button>
+      <button value="8" class="choice">8</button>
+      <button value="9" class="choice">9</button>
+      <button data-el="clearBtn" class="choice">C</button>
+    </div>
+    </main>
+  </body>
+</html>
