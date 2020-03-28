@@ -1,7 +1,7 @@
 import './styles/index.scss';
 import Generator from './Generator';
 
-//window.onbeforeunload = () => true;
+window.onbeforeunload = () => true;
 
 const loading = document.querySelector('.loading');
 const gameBoard = document.querySelector('[data-el="game-board"]');
