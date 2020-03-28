@@ -12,7 +12,7 @@ body {
   margin: 0;
   height: 100vh;
   color: white;
-  background: #4a4a4a;
+  background: $darkGray;
 }
 
 main {
@@ -31,26 +31,25 @@ button {
 
 header {
   h1 { margin: 0 }
-  color: white;
   padding: 15px;
   margin-bottom: 20px;
 }
 
 .header-highlight {
   height: 20px;
-  background: #3b7dc5;
+  background: $lightBlue;
 }
 
 .choice {
-  color: #2f2f2f;
-  border-right: solid 1px black;
-  background: white;
+  border-right: solid 1px $darkGray;
+  color: white;
+  background: $lightGreen;
   flex: 1;
   font-size: 30px;
-  font-weight: 600;
 }
 
 .mobile-choices {
+  font-family: 'Roboto', sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -84,11 +83,11 @@ header {
   flex: 1;
   display: flex;
   flex-direction: column;
-  border: solid 1px #545490;
+  border: solid 1px $darkGray;
 }
 
 .cell {
-  border: solid 1px #0000ff38;
+  border: solid 1px $cellBorder;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -104,7 +103,7 @@ header {
 }
 
 .light-touch {
-  background: #64ce6966;
+  background: $lightHighlight;
 }
 
 .edited { color: green }
@@ -112,7 +111,7 @@ header {
 .tiny { width: 1px; height: 1px; }
 
 .success-background {
-  background: #40c140;
+  background: $successGreen;
 }
 
 .success, .failure {
@@ -123,7 +122,7 @@ header {
   height: 50vh;
 
   button {
-    background: #3b7dc5;
+    background: $lightBlue;
     color: white;
     padding: 10px;
     font-weight: bold;
@@ -132,15 +131,16 @@ header {
   }
 
   .sub-msg {
+    font-weight: 600;
     margin-bottom: 20px;
   }
 }
 
 .failure {
-  h2 { color: #ffca00 }
+  h2 { color: $failYellow }
 
   button {
-    background: #4aab4a;
+    background: $lightGreen;
     color: white;
     width: 100%;
     margin-top: 15px;
@@ -148,3 +148,47 @@ header {
 }
 
 .hide { display: none }
+
+@media(min-width: 550px) {
+  .game-board  {
+    height: 70vw;
+    width: 70vw;
+  }
+
+  .mobile-choices {
+    width: 70vw;
+  }
+}
+
+@media(min-width: 670px) {
+  .game-board  {
+    height: 50vw;
+    width: 50vw;
+  }
+
+  .mobile-choices {
+    width: 50vw;
+  }
+}
+
+@media(min-width: 900px) {
+  .game-board  {
+    height: 450px;
+    width: 450px;
+  }
+
+  .mobile-choices {
+    width: 450px;
+  }
+
+  .header-highlight { display: none }
+
+  header {
+    border-bottom: solid 7px $lightGreen;
+    background: $lightBlue;
+  }
+
+  .success-background {
+    background: $darkGray;
+  }
+}
