@@ -1,7 +1,8 @@
 import './styles/index.scss';
 import Generator from './Generator';
+import './gameTime';
 
-window.onbeforeunload = () => true;
+//window.onbeforeunload = () => true;
 
 const loading = document.querySelector('.loading');
 const gameBoard = document.querySelector('[data-el="game-board"]');

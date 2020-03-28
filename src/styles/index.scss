@@ -34,7 +34,6 @@ button {
 header {
   h1 { margin: 0 }
   padding: 15px;
-  margin-bottom: 20px;
 }
 
 .header-highlight {
@@ -43,11 +42,13 @@ header {
 }
 
 .choice {
-  border-right: solid 1px $darkGray;
   color: white;
   background: $green;
   flex: 1;
   font-size: 30px;
+  border-radius: 5px;
+  margin-right: 2px;
+  border: solid 1px $darkGray;
 }
 
 .mobile-choices {
@@ -149,6 +150,17 @@ header {
   }
 }
 
+.game-stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #000000b8;
+  width: 90vw;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
 .hide { display: none }
 
 @media(min-width: 550px) {
@@ -157,6 +169,7 @@ header {
     width: 70vw;
   }
 
+  .game-stats { width: 70vw; }
   .mobile-choices {
     width: 70vw;
   }
@@ -171,6 +184,7 @@ header {
   .mobile-choices {
     width: 50vw;
   }
+  .game-stats { width: 50vw; }
 }
 
 @media(min-width: 900px) {
@@ -179,13 +193,12 @@ header {
     width: 450px;
   }
 
-  .mobile-choices {
-    width: 450px;
-  }
-
+  .mobile-choices { width: 450px; }
+  .game-stats { width: 450px; }
   .header-highlight { display: none }
 
   header {
+    margin-bottom: 20px;
     border-bottom: solid 1px $green;
     background: $darkGray;
   }
