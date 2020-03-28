@@ -77,6 +77,7 @@ window.addEventListener('load', () => {
         restartListener();
 
       }
+
       if (complete && invalid) {
         mobileChoices.classList.add('hide');
         gameBoard.classList.add('hide');
@@ -100,6 +101,19 @@ window.addEventListener('load', () => {
         cell.classList.remove('light-touch');
         cell.classList.remove('touched');
       });
+
+      const existingSames = document.querySelectorAll('.yellow');
+      existingSames.forEach((cell) => {
+        cell.classList.remove('yellow');
+      });
+
+      // Don't highlight empty cells
+      if (Number(cell.dataset.val) > 0) {
+        const sames = document.querySelectorAll('[data-val="' + cell.dataset.val + '"]');
+        sames.forEach((s) => {
+          s.classList.add('yellow');
+        });
+      }
 
       const col = e.target.dataset.col;
       const collCells = document.querySelectorAll("[data-col='" + col + "']");
