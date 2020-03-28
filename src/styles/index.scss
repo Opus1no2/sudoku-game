@@ -13,6 +13,8 @@ body {
   height: 100vh;
   color: white;
   background: $darkGray;
+  background: url('../background.jpg') no-repeat center center;
+  background-size: cover;
 }
 
 main {
@@ -43,7 +45,7 @@ header {
 .choice {
   border-right: solid 1px $darkGray;
   color: white;
-  background: $lightGreen;
+  background: $green;
   flex: 1;
   font-size: 30px;
 }
@@ -184,8 +186,8 @@ header {
   .header-highlight { display: none }
 
   header {
-    border-bottom: solid 7px $lightGreen;
-    background: $lightBlue;
+    border-bottom: solid 1px $green;
+    background: $darkGray;
   }
 
   .success-background {
